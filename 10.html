@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINI IPL</title>
+  <style>
+    /* Background with blur */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('Bg_EP.png') no-repeat center center/cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('Bg_EP.png') no-repeat center center/cover;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: transparent;
+      position: relative;
+      z-index: 10;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li {
+      position: relative;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+    .nav-links a:hover {
+      color: #00FFFF;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: transparent;
+      list-style: none;
+      padding: 10px 0;
+      border-radius: 25px;
+      z-index: 1000;
+    }
+    .dropdown-menu li {
+      padding: 5px 40px;
+    }
+    .dropdown-menu a {
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      color: #00FFFF;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .logo img {
+      height: 40px;
+    }
+
+    /* Image Flip Cards */
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px;
+      padding: 50px;
+      position: relative;
+      z-index: 5;
+    }
+    .child {
+      background: transparent;
+      padding: 10px;
+      border-radius: 10px;
+      perspective: 1000px;
+      position: relative;
+      overflow: hidden;
+    }
+    .flip-card {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .child:hover .flip-card {
+      transform: rotateY(180deg);
+    }
+    .flip-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      backface-visibility: hidden;
+    }
+
+    /* Register Now Button */
+    .register-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      padding: 10px 20px;
+      background-color: #00FFFF;
+      color: black;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    .child:hover .register-btn {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .register-btn:hover {
+      background-color: #00cccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="college logo.jpg" alt="Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+         <li><a href="events.html">Events</a></li> 
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="parent">
+    <div class="child">
+      <div class="flip-card">
+        <img src="E_P/T101.jpg" alt="Image Front 1">
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQqIjpSvMEF7LN_unuvP7yYK8zv2r12aZANniVtEIJN59hrA/viewform?usp=sharing" target="_blank">
+        <button class="register-btn">Register Now</button>
+      </a>
+    </div>
+
+    <div class="child">
+      <div class="flip-card">
+        <img src="E_P/T102.jpg" alt="Image Front 2">
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQqIjpSvMEF7LN_unuvP7yYK8zv2r12aZANniVtEIJN59hrA/viewform?usp=sharing" target="_blank">
+        <button class="register-btn">Register Now</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

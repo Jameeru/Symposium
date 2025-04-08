@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>About Us</title>
+    
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('bg.jpg'); 
+    background-size: cover;         
+    background-repeat: no-repeat;   
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    overflow-x:hidden; /* ✅ Add this to prevent horizontal (side) scroll */
+    overflow-y: auto;   /* ✅ Allow vertical scroll */
+}
+
+        .contents {
+         
+            padding: 50px;
+            margin: 50px auto;
+            border-radius: 10px;
+            color: #fff;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        h2 {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #fff;
+        }
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+.container .card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Remove white background */
+  border: none; /* Remove border */
+}
+.container .card .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .content {
+  position: absolute;
+  bottom: -160px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 -10px 10px rgba(0,0,0,0.1);
+  transition: bottom 0.5s;
+  transition-delay: 0.8s;
+  background-color: rgba(7, 7, 7, 0.7); /* Add a semi-transparent dark background */
+}
+.container .card:hover .content{
+  bottom: 0px;
+  transition-delay: 0s;
+}
+.container .card .content .contentBx h3{
+  color: #fff; /* Ensure text is visible */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1em;
+  text-align: center;
+  margin: 5px 0 15px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-delay: 0.6s;
+}
+.container .card:hover .content .contentBx h3{
+  opacity: 1;
+  transform: translateY(0px);
+}
+.container .card .content .contentBx h3 span{
+  font-size: 9px;
+  font-weight: 300;
+  text-transform: initial;
+}
+.container .card .content .sci{
+  position: relative;
+  bottom: 10px;
+  display: flex;
+}
+.container .card .content .sci li{
+  list-style: none;
+  margin:  10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.2s * var(--i));
+}
+.container .card:hover .content .sci li{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container .card .content .sci li a{
+  color: #fff; /* Ensure social icons are visible */
+}
+
+/* Navigation Buttons */
+.button {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+}
+
+.button button {
+  width: 40px;
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  border: 1px solid #000;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  background: #ababab;
+  color: #fff;
+}
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111; /* Semi-transparent background */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative; /* Required for dropdown positioning */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #00FFFF; /* Hover effect */
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background:transparent; 
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 25px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 5px 40px;
+}
+
+.dropdown-menu a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  color: #00FFFF; 
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block; 
+}
+.logo img {
+  height: 40px;
+}
+.contain1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .image-box {
+            width: 300px; 
+            height: 180px; 
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack images in portrait mode */
+            }
+        }
+        .video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ Makes video cover nicely */
+}
+.countdown-calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: transparent;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.countdown-item {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+footer {
+  width: 100%;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  margin-top: auto;
+  padding: 0;
+}
+
+.footerContainer {
+  width: 100%;
+  padding: 40px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: #00d8ff;
+  color: white;
+  transform: scale(1.2);
+}
+
+.footerNav {
+  margin-bottom: 20px;
+}
+
+.footerNav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerNav ul li {
+  margin: 10px 20px;
+}
+
+.footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footerNav ul li a:hover {
+  color: #00d8ff;
+}
+
+.footerBottom {
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+  border-top: 1px solid #333;
+  width: 100%;
+}
+
+.footerBottom .designer {
+  font-weight: bold;
+  color: #00d8ff;
+}
+
+@media (max-width: 600px) {
+  .footerNav ul {
+    flex-direction: column;
+  }
+
+  .footerNav ul li {
+    margin: 10px 0;
+  }
+}
+    </style>
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+              <img src="college logo.jpg" alt="Logo">
+          </div>
+          <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+          <source src="Edit.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="countdown-calendar">
+      <div class="countdown-item">
+        <div id="days" class="number">00</div>
+        <div class="label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <div id="hours" class="number">00</div>
+        <div class="label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <div id="minutes" class="number">00</div>
+        <div class="label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <div id="seconds" class="number">00</div>
+        <div class="label">Seconds</div>
+      </div>
+    </div>
+    <script>
+      // Event date: 25 April 2025, 5:00 PM
+      const eventDate = new Date("April 25, 2025 17:00:00").getTime();
+    
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+    
+      const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+    
+        if (distance < 0) {
+          clearInterval(countdown);
+          daysEl.innerHTML = "00";
+          hoursEl.innerHTML = "00";
+          minutesEl.innerHTML = "00";
+          secondsEl.innerHTML = "00";
+          return;
+        }
+    
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        daysEl.innerHTML = String(days).padStart(2, '0');
+        hoursEl.innerHTML = String(hours).padStart(2, '0');
+        minutesEl.innerHTML = String(minutes).padStart(2, '0');
+        secondsEl.innerHTML = String(seconds).padStart(2, '0');
+      }, 1000);
+    </script>
+    <section id="Made" class="section">
+    <div class="contents">
+        <h2>About Us</h2>
+        <p>Welcome to our website! We are dedicated to providing the best services and experiences for our users. Our team works tirelessly to ensure quality and satisfaction in everything we do.</p>
+        <p>Thank you for visiting, and we hope you enjoy your time here!</p>
+
+
+        <div class="contain1">
+            <div class="image-box">
+                <img src="Ab1.JPG" alt="">
+            </div>
+            <div class="image-box">
+                <img src="Ab2.JPG" alt="">
+            </div>
+            <div class="image-box">
+                <img src="Ab3.JPG" alt="">
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="contents">
+        <h2>Our Mission</h2>
+        <p>To educate the future software engineers with strong fundamentals by continuously improving the teaching learning methodologies using contemporary aids.To create a knowledge hub of Information technology with everlasting urge to learn by developing, maintaining and continuously improving the resources/technology.To produce ethical engineers / researchers by instilling the values of humility, humaneness, honesty and courage to serve the society.
+            Programme Educational Objectives:
+            To provide strong trustin mathematical, scientific & engineering fundamentals necessary to analyze, formulate and solve engineering problems.
+            To provide thorough knowledge in the domains of Information Technology such as Operating System, Data Base Management System, Networks, Security, Embedded systems, Data Structures, Programming Languages, Computer Architecture, Soft Computing, etc., with theoretical and practical training using contemporary aids.
+            To provide relevant engineering experience in designing and conducting experiments to analyze the significance of experimental data.
+            To inculcate the habit of continuous learning and to adapt themselves to the technological challenges throughout their career.
+            To impart technical knowledge and ethical values in the future software engineers which would contribute for their holistic development.</p>
+    </div>
+
+    <div class="contents">
+        <h2>Our Vision</h2>
+        <p>We envision creating a collaborative environment where students can learn, grow, and excel in their respective fields, contributing to a brighter future.</p>
+    </div>
+
+    <div class="contents">
+        <h2>Our Team</h2>
+        <p>Our team comprises dedicated professionals and enthusiastic students who work together to organize and execute this symposium successfully.</p>
+        <div class="container">
+            <div class="card">
+              <div class="imgBx">
+                <img src="Heads/1.jpeg">
+              </div>
+              <div class="content">
+                <div class="contentBx">
+                  <h3>Dr. N. JAISANKAR <br><span>President <br> Head of the Department 
+                    Information Technology</span></h3>
+                </div>
+        
+              </div>
+            </div>
+        
+            <div class="card">
+              <div class="imgBx">
+                <img src="Heads/2.jpeg">
+              </div>
+              <div class="content">
+                <div class="contentBx">
+                  <h3>Mr. Vinodh kumar<br><span>Staff Coordinator <br>
+                    Technical</span></h3>
+                </div>
+        
+                
+        
+              </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/3.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>Mr. Sathish Kumar P<br><span>Staff Coordinator <br>Non - Technical </span></h3>
+                  </div>
+          
+                  
+          
+                </div>
+              </div>
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/4.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>SHYAM A<br><span>STUDENT SECRETARY</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/5.jpg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>A.R.Aravindhan <br><span>Student Treasurer</span></h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/6.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>⁠Prahalyaa Y<br><span>Student Joint Secretary</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/7.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>Derlin Mano D<br><span>Student Joint Treasurer</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/8.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>Ganesh Arvind P<br><span>Technical Head</span></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="imgBx">
+                  <img src="Heads/9.jpeg">
+                </div>
+                <div class="content">
+                  <div class="contentBx">
+                    <h3>Jasritha U D<br><span>Joint Technical Head</span></h3>
+                  </div>
+                </div>
+              </div>
+            <div class="card">
+              <div class="imgBx">
+                <img src="Heads/10.jpeg">
+              </div>
+              <div class="content">
+                <div class="contentBx">
+                  <h3>Jameeru J <br><span>Student Co-ordinator</span></h3>
+                </div>
+        
+              </div>
+            </div>
+        
+          </div>
+      </section>
+        
+        </body>
+        <footer>
+          <div class="footerContainer">
+            <div class="socialIcons">
+              <a href="https://www.facebook.com/p/Misrimal-Navajee-Munoth-Jain-Engineering-College-100081528901909/"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/aicon_25?igsh=NTJ6anhsdWdtN2Fy"><i class="fa-brands fa-instagram"></i></a>
+              <a href="mailto:aicon2k25@gmail.com"><i class="fa-brands fa-google-plus"></i></a>
+              <a href="https://maps.app.goo.gl/2TBCwMBu1moWR66C9"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+              <div class="footerNav">
+                  <ul><li><a href="index.html">Home</a></li>
+                      <li><a href="About.html">About</a></li>
+                      <li><a href="events.html">Events</a></li>
+                      <li><a href="contact.html">Contact </a></li>
+                  </ul>
+              </div>
+              
+          </div>
+          <div class="footerBottom">
+            <p>
+              Copyright &copy; 2025; Designed by 
+              <a href="https://www.linkedin.com/in/jameeru-j/" target="_blank" class="designer">
+                Jameeru J
+              </a>
+            </p>
+          </div>
+        </footer>
+</html>

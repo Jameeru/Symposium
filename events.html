@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<title>CSS Cards with Overlay Hover Animation/title></title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+
+body {
+    background: url('t.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.wrapper {
+    padding: 10px 10%;
+}
+
+#card-area {
+    padding: 50px 0;
+}
+
+.box-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    height: 1200px;;
+}
+
+.box {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    transition: transform 0.5s ease;
+}
+
+.box img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+    object-fit: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(transparent, #1c1c1c 58%);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s ease;
+}
+
+.overlay h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glitter 2s infinite linear;
+}
+
+/* Glitter Animation */
+@keyframes glitter {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.overlay p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.overlay a {
+    margin-top: 15px;
+    color: #262626;
+    text-decoration: none;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 8px 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.overlay a:hover {
+    background: #ff6ec4;
+    color: #fff;
+}
+
+.box:hover img {
+    transform: scale(1.1);
+}
+
+.box:hover .overlay {
+    height: 100%;
+}
+.section-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.glitter-text {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff, #00c3ff, #ff8a00);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitter 8s linear infinite;
+}
+
+@keyframes glitter {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    </style>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="college logo.jpg" alt="Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+</head>
+<body>
+	<div id="card-area">
+		<div class="wrapper">
+            <h2 class="section-heading glitter-text">Technical</h2>
+			<div class="box-area">
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T1.jpeg">
+					<div class="overlay">
+						<h3>PRESENTIA</h3>
+						<p>"Showcase innovative research and ideas through a structured and impactful paper presentation."</p><a href="1.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T2.jpeg">
+					<div class="overlay">
+						<h3>SYNAPSE</h3>
+						<p>"Challenge your tech knowledge by uncovering hidden technical terms in a thrilling word matrix game."</p><a href="2.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T3.jpeg">
+					<div class="overlay">
+						<h3>BUG-BUSTER</h3>
+						<p>"Sharpen your skills by solving coding challenges and debugging errors under time pressure."</p><a href="3.html">Register</a>
+					</div>
+				</div>
+                
+			</div>
+		</div>
+        <div class="wrapper">
+			<div class="box-area">
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T4.jpeg">
+					<div class="overlay">
+						<h3>WEB-ZENITH</h3>
+						<p>"Bring creativity to life by crafting visually stunning and user-friendly websites."</p><a href="4.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T5.jpeg">
+					<div class="overlay">
+						<h3>INNOVATE X</h3>
+						<p>"Present groundbreaking ideas and innovative projects that redefine possibilities."</p><a href="5.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Tech/T6.jpeg">
+					<div class="overlay">
+						<h3>ARGUBYTES</h3>
+						<p>"Engage in a battle of ideas, showcasing logic, wit, and persuasive speaking skills."</p><a href="6.html">Register</a>
+					</div>
+				</div>
+                
+			</div>
+		</div>
+
+        <div class="wrapper">
+            <h2 class="section-heading glitter-text">Non - Technical Events </h2>
+			<div class="box-area">
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T7.jpg">
+					<div class="overlay">
+						<h3>TAKE-OK</h3>
+						<p>"Tell powerful stories and spark emotions through creative short films."</p><a href="7.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T8.jpg">
+					<div class="overlay">
+						<h3>BRAND BUZZ</h3>
+						<p>"Craft a unique identity that leaves a lasting impression through powerful branding."</p><a href="8.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T9.jpg">
+					<div class="overlay">
+						<h3>SQUID GAME</h3>
+						<p>"Compete in thrilling challenges where strategy, speed, and survival instincts decide your fate."</p><a href="9.html">Register</a>
+					</div>
+				</div>
+                
+			</div>
+		</div>
+        <div class="wrapper">
+			<div class="box-area">
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T10.jpg">
+					<div class="overlay">
+						<h3>MINI IPL</h3>
+						<p>"Gear up for an action-packed Mini IPL where teams battle for glory on the cricket field."</p><a href="10.html">Register </a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T11.png">
+					<div class="overlay">
+						<h3>FUN FACTORY</h3>
+						<p>"Solve clues, crack codes, and race against time to uncover hidden treasures."</p><a href="11.html">Register</a>
+					</div>
+				</div>
+				<div class="box">
+					<img alt="" src="Event Poster/Non-Tech/T12.jpg">
+					<div class="overlay">
+						<h3>RAMPAGE ROYALS</h3>
+						<p>"Gear up, drop in, and battle it out to be the last squad standing in the ultimate PUBG showdown."</p><a href="12.html">Register</a>
+					</div>
+				</div>
+                
+			</div>
+		</div>
+	</div>
+</body>
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/p/Misrimal-Navajee-Munoth-Jain-Engineering-College-100081528901909/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/aicon_25?igsh=NTJ6anhsdWdtN2Fy"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:aicon2k25@gmail.com"><i class="fa-brands fa-google-plus"></i></a>
+            <a href="https://maps.app.goo.gl/2TBCwMBu1moWR66C9"><i class="fa-solid fa-location-dot"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul><li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="footerBottom">
+        <p>
+            Copyright &copy; 2025; Designed by 
+            <a href="https://www.linkedin.com/in/jameeru-j/" target="_blank" class="designer">
+              Jameeru J
+            </a>
+          </p>
+    </div>
+  </footer>
+</html>
