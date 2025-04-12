@@ -26,7 +26,17 @@
     overflow-x:hidden; /* ✅ Add this to prevent horizontal (side) scroll */
     overflow-y: auto;   /* ✅ Allow vertical scroll */
 }
+.celebrate {
+  font-size: 30px;
+  color: #ff4d4d;
+  animation: pop 1s ease infinite;
+}
 
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
         .contents {
          
             padding: 50px;
